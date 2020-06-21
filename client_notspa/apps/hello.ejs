@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>my-project</title>
+  </head>
+  <style>
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 60px;
+    }
+    .base {
+        width: 60%;
+        margin: auto;
+      }
+  </style>
+
+  <body>
+    <div id="app">
+    <img src = "nodejs.svg" /> 
+    <!-- built files will be auto injected -->
+      <div class="base">
+        <form action="/" method="post">
+          <div class="form-group">
+            <label for="exampleInputEmail1">URI for IBM Cloud serverApp:</label>
+            <input type="url" class="form-control" name="ibm" placeholder="IBM Cloud">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">URI for AWS serverApp:</label>
+            <input type="url" class="form-control" name="aws" placeholder="AWS">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <input type="reset" class="btn btn-danger" value="Reset">
+        </form>
+
+        <div class="card" header="AWS Result">
+          <div>
+            リクエスト送信(クライアント): <%= posts[0] %> <br>
+            リクエスト受信(サーバ): <%= posts[1] %> <br>
+            <font color=red>リクエスト時間: <%= posts[1] - posts[0] %> <br></font>
+            レスポンス送信(サーバ):  <%= posts[2] %> <br>
+            レスポンス受信(クライアント): <%= posts[3] %> <br>
+            <font color=red>レスポンス時間: <%= posts[3] - posts[2] %> <br></font>
+          </div>
+        </div>
+        <div class="card" header="IBM Cloud Result">
+          <div>
+            リクエスト送信(クライアント): <%= posts[4] %> <br>
+            リクエスト受信(サーバ): <%= posts[5] %> <br>
+            <font color=red>リクエスト時間: <%= posts[5] - posts[4]  %> <br></font>
+            レスポンス送信(サーバ):  <%= posts[6] %> <br>
+            レスポンス受信(クライアント): <%= posts[7] %> <br>
+            <font color=red>レスポンス時間: <%= posts[7] - posts[6]  %> <br></font>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
